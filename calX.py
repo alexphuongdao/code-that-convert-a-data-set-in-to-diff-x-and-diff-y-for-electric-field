@@ -8,7 +8,7 @@ data = pd.read_excel('scan_output_A.xlsx', header=None)  # Load data without hea
 data_array = data.values # Convert DataFrame to NumPy array
 
 
-delta_v_x = np.diff(data_array, axis=1) # axis= 1 mean operation along the row
+delta_v_x = -(np.diff(data_array, axis =1)) # axis= 1 mean operation along the row
 delta_v_x = delta_v_x[0:-1,:]
 # Step 4: Create a DataFrame from the delta_v_x array
 delta_v_x_df = pd.DataFrame(delta_v_x)
